@@ -1,8 +1,9 @@
 public class Queue<T> {
-    public Node first;
+    public QueueNode first;
     public int lenght;
+
     public void enqueue(){
-        Node<T> New=new Node<T>();
+        QueueNode<T> New=new QueueNode<T>();
         if(this.first==null){
             this.first=New;
             lenght++;
@@ -11,8 +12,8 @@ public class Queue<T> {
             lenght++;
         }
     }
-    public Node<T> dequeue(){
-        Node <T> current = this.first;
+    public QueueNode<T> dequeue(){
+        QueueNode<T> current = this.first;
         this.first=this.first.getNext();
         current.next=null;
         return current;

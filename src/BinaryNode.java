@@ -1,7 +1,9 @@
 public class BinaryNode<T> {
+
     public T key;
     public BinaryNode rightChild;
     public BinaryNode leftChild;
+
     public BinaryNode(T Key){
         this.key=Key;
     }

@@ -15,7 +15,7 @@ public class SimpleList<T> {
 		if(this.root == null) {
 			
 			this.root = newNode;
-			this.length--;
+			this.length++;
 			
 		}
 		else {
@@ -29,10 +29,36 @@ public class SimpleList<T> {
 			}
 			
 			current.setNext(newNode);
-			this.length--;
+			this.length++;
 			
 		}
 		
+	}
+	public Node<T> getNode(int ind) {
+		
+		Node<T> current = this.root;
+		
+		int i = 0;
+		
+		while(ind != i) {
+			
+			current = current.getNext();
+			i++;
+		}
+		
+		return current;
+	}
+	public T getNodeData(int ind) {
+		
+		Node<T> current = this.root;
+		
+		while(ind > 0) {
+			
+			current = current.getNext();
+			
+		}
+		
+		return current.getData();
 	}
 	
 	public void deleteNode(T data) {
@@ -90,5 +116,22 @@ public class SimpleList<T> {
 		intList.printNodes();
 		
 	}
+
+	public Node<T> getRoot() {
+		return root;
+	}
+
+	public void setRoot(Node<T> root) {
+		this.root = root;
+	}
+
+	public int getLength() {
+		return length;
+	}
+
+	public void setLength(int length) {
+		this.length = length;
+	}
+	
 	
 }

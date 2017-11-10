@@ -38,6 +38,30 @@ public class DoubleList<T> {
 		}
 		
 	}
+	public DoubleNode<T> getNode(int ind) {
+		
+		DoubleNode<T> current = this.root;
+		
+		while(ind > 0) {
+			
+			current = current.getNext();
+			
+		}
+		
+		return current;
+	}
+	public T getNodeData(int ind) {
+		
+		DoubleNode<T> current = this.root;
+		
+		while(ind > 0) {
+			
+			current = current.getNext();
+			
+		}
+		
+		return current.getData();
+	}
 	
 	public void deleteNode(T data) {
 		
@@ -77,6 +101,22 @@ public class DoubleList<T> {
 	}
 	
 	
+
+	public DoubleNode<T> getRoot() {
+		return root;
+	}
+
+	public void setRoot(DoubleNode<T> root) {
+		this.root = root;
+	}
+
+	public int getLength() {
+		return length;
+	}
+
+	public void setLength(int length) {
+		this.length = length;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

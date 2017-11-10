@@ -1,8 +1,7 @@
 public class BinaryTree<T> {
 
     public BinaryNode<T> root;
-    public BinaryTree(){
-    }
+
     public BinaryTree(T key){
         this.root= new BinaryNode<>(key);
     }

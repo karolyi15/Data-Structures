@@ -1,5 +1,6 @@
 public class SelectionSort {
-    public static int[] doSelectionSort(int[] arr){
+
+    public  void doSelectionSort(int[] arr){
 
         for (int i = 0; i < arr.length - 1; i++)
         {
@@ -12,7 +13,19 @@ public class SelectionSort {
             arr[index] = arr[i];
             arr[i] = smallerNumber;
         }
-        return arr;
+        this.print(arr);
+    }
+    public void print(int[] array){
+        int n=array.length;
+        for(int i=0;i<n;i++){
+            System.out.print(array[i]+" ");
+        }
+    }
+    public static void main(String[] args){
+        int[] array={5,9,1,3,90,43};
+        SelectionSort sort=new SelectionSort();
+        sort.doSelectionSort(array);
+
     }
 
 }

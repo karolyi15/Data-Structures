@@ -8,13 +8,6 @@ public class BinaryTree<T> {
     public void add(T key){
         BinaryNode <T> New=new BinaryNode<>(key);
         if (this.root==null){
-            this.root=new BinaryNode<>(key);
-        }else if(){
+            this.root=new BinaryNode<>(key);    }
 
-        }
-
-    }
-    public void del(){
-
-    }
-}
+}}

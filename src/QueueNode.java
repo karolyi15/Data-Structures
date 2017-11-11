@@ -3,7 +3,7 @@ public class QueueNode<T> {
     public T data;
     public QueueNode next;
 
-    public void setData(T Data){
+    public QueueNode(T Data){
 
         this.data=Data;
     }

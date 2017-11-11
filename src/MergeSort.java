@@ -52,4 +52,9 @@ public class MergeSort {
             i++;
         }
     }
+    public static void main(String[] args){
+        int[] array= {5,9,1,3,90,43};
+        MergeSort sort=new MergeSort();
+        sort.sort(array);
+    }
 }

@@ -1,41 +1,51 @@
 
-class QuickSort
-{
-    int partition(int arr[], int low, int high)
-    {
-        int pivot = arr[high];
-        int i = (low-1);
-        for (int j=low; j<high; j++)
-        {
+class QuickSort {
+    private int[] numbers;
+    private int number;
 
-            if (arr[j] <= pivot)
-            {
-                i++;
-
-
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-
-        int temp = arr[i+1];
-        arr[i+1] = arr[high];
-        arr[high] = temp;
-
-        return i+1;
+    public void sort(int[] values) {
+        this.numbers = values;
+        number = values.length;
+        quicksort(0, number - 1);
+        print(values);
     }
 
-    void sort(int arr[], int low, int high)
-    {
-        if (low < high)
-        {
+    private void quicksort(int low, int high) {
+        int i = low, j = high;
+        int pivot = numbers[low + (high-low)/2];
 
-            int pi = partition(arr, low, high);
-
-
-            sort(arr, low, pi-1);
-            sort(arr, pi+1, high);
+        while (i <= j) {
+            while (numbers[i] < pivot) {
+                i++;
+            }
+            while (numbers[j] > pivot) {
+                j--;
+            }
+            if (i <= j) {
+                exchange(i, j);
+                i++;
+                j--;
+            }
         }
+        if (low < j)
+            quicksort(low, j);
+        if (i < high)
+            quicksort(i, high);
+    }
+
+    private void exchange(int i, int j) {
+        int temp = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = temp;
+    }
+    public void print(int[] numbers){
+        for(int i=0;i<numbers.length;i++){
+            System.out.print(numbers[i]+" ");
+        }
+    }
+    public static void main(String[] args){
+        int[] array= {5,9,1,3,90,43};
+        QuickSort sort=new QuickSort();
+        sort.sort(array);
     }
 }

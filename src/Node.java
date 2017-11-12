@@ -1,19 +1,19 @@
-public class QueueNode<T> {
+public class Node<T> {
 
     public T data;
-    public QueueNode next;
+    public Node next;
 
-    public QueueNode(T Data){
+    public Node(T Data){
 
         this.data=Data;
     }
-    public void setNext(QueueNode Next){
+    public void setNext(Node Next){
         this.next=Next;
     }
     public T getData(){
         return this.data;
     }
-    public QueueNode getNext(){
+    public Node getNext(){
         return this.next;
     }
 }

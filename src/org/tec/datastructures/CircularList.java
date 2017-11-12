@@ -19,6 +19,8 @@ public class CircularList<T> {
 			
 			this.root = newNode;
 			this.length++;
+			this.root.setNext(this.root);
+			this.root.setPrev(this.root);
 			
 		}
 		else {
@@ -30,7 +32,7 @@ public class CircularList<T> {
 				current = current.getNext();
 				
 			}
-			
+			this.root.setPrev(newNode);
 			newNode.setPrev(current);
 			newNode.setNext(this.root);
 			current.setNext(newNode);
@@ -70,10 +72,20 @@ public class CircularList<T> {
 		
 		if(this.root.getData().equals(data)) {
 			
-			this.root = current.getNext();
-			this.root.setPrev(current.getPrev());
+			DoubleNode<T> prev = this.root.getPrev();
+            DoubleNode<T> next = this.root.getNext();
+
+            this.root.setNext(null);
+
+            this.root.setPrev(null);
+
+            this.root = next;
+
+            this.root.setPrev(prev);
+            this.root.getPrev().setNext(this.root);
+
 			this.length--;
-			
+			return;
 		}
 		
 		
@@ -82,9 +94,15 @@ public class CircularList<T> {
 			current = current.getNext();
 			
 		}
+		DoubleNode<T> next = current.getNext().getNext();
 		
-		current.setNext(current.getNext().getNext());
+		current.getNext().setNext(null);
+		current.getNext().setPrev(null);
+		current.setNext(next);
 		current.getNext().setPrev(current);
+		
+		
+		
 		this.length--;
 		
 	}

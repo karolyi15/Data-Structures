@@ -69,7 +69,15 @@ public class DoubleList<T> {
 		
 		if(this.root.getData().equals(data)) {
 			
-			this.root = this.root.getNext();
+            DoubleNode<T> next = this.root.getNext();
+
+            this.root.setNext(null);
+
+            this.root.setPrev(null);
+
+            this.root = next;
+
+            this.root.setPrev(null);
 			this.length--;
 			
 		}
@@ -80,8 +88,9 @@ public class DoubleList<T> {
 			current = current.getNext();
 			
 		}
-		
+		current.getNext().setPrev(null);	
 		current.setNext(current.getNext().getNext());
+		current.getNext().getPrev().setNext(null);
 		current.getNext().setPrev(current);
 		this.length--;
 	}

@@ -1,10 +1,10 @@
 public class Queue<T> {
-    public QueueNode first;
-    public QueueNode last;
+    public Node first;
+    public Node last;
     public int lenght;
 
     public void enqueue(T data){
-        QueueNode<T> New=new QueueNode<T>(data);
+        Node<T> New=new Node<T>(data);
         if(this.first==null){
             this.first=this.last=New;
         }else{
@@ -13,8 +13,8 @@ public class Queue<T> {
         }
         lenght++;
     }
-    public QueueNode<T> dequeue(){
-        QueueNode<T> current = this.first;
+    public Node<T> dequeue(){
+        Node<T> current = this.first;
         this.first=this.first.getNext();
         current.next=null;
         lenght--;
@@ -25,7 +25,7 @@ public class Queue<T> {
     }
 
     public void display() {
-        QueueNode current = this.first;
+        Node current = this.first;
         for(int i=0;i<lenght;i++){
             System.out.print(current.getData()+" ");
             current=current.getNext();

@@ -1,3 +1,4 @@
+package org.tec.datastructures;
 public class BinaryNode<T> {
     public T key;
     public BinaryNode rightChild;

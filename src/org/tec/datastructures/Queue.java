@@ -1,3 +1,5 @@
+package org.tec.datastructures;
+
 public class Queue<T> {
     public Node first;
     public Node last;

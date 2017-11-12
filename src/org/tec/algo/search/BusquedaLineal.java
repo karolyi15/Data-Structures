@@ -1,3 +1,5 @@
+package org.tec.algo.search;
+
 public class BusquedaLineal <T>{
     public T[] array;
     public T search;

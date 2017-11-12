@@ -1,3 +1,5 @@
+package org.tec.algo.sort;
+
 public class RadixSort {
 
     static void sort( int[] a)

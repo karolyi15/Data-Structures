@@ -1,3 +1,4 @@
+package org.tec.algo.sort;
 
 class ShellSort {
 

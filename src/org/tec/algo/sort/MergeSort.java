@@ -1,3 +1,5 @@
+package org.tec.algo.sort;
+
 public class MergeSort {
     private int[] numeros;
     private int[] auxiliar;

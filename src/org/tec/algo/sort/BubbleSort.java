@@ -1,3 +1,5 @@
+package org.tec.algo.sort;
+
 public class BubbleSort <T>{
 
     public BubbleSort(int array[]) {

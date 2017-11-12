@@ -1,3 +1,5 @@
+package org.tec.algo.sort;
+
 public class SelectionSort {
 
     public  void doSelectionSort(int[] arr){

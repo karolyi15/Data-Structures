@@ -1,17 +1,17 @@
 package org.tec.datastructures;
 
 public class Node<T> {
-	
+
 	public Node(T data){
-		
+
 		this.data = data;
 		this.next = null;
-		
+
 	}
-	
-	private T data;
-	
-	private Node<T> next;
+
+	public T data;
+
+	public Node<T> next;
 
 	public T getData() {
 		return data;
@@ -28,7 +28,7 @@ public class Node<T> {
 	public void setNext(Node<T> next) {
 		this.next = next;
 	}
-	
+
 }
 
 

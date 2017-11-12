@@ -1,3 +1,5 @@
+package org.tec.algo.search;
+
 public class BusquedaBinaria {
     int first=0;
     int middle;

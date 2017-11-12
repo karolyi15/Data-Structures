@@ -1,6 +1,7 @@
 package org.tec.datastructures;
 
 public class Queue<T> {
+
     private Node<T> first;
     private int lenght;
     public void enqueue(Node<T> newNode){
@@ -17,6 +18,7 @@ public class Queue<T> {
         Node <T> current = this.first;
         this.first= this.first.getNext();
         current.setNext(null);
+
         return current;
     }
     public int getLenght(){
